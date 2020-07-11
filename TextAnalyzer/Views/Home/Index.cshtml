@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Text analyzer";
+}
+
+<form asp-controller="Home" asp-action="Analyze" method="post" class="form-horizontal" role="form">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <label>Choise metric : </label>
+                <select class="form-control"
+                        name="metricName"
+                        asp-items="@(new SelectList(@ViewBag.Metrics,"Name"))">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <br /><br />
+                <label>Enter your text : </label>
+                <br /><br />
+                <textarea name="text" style="width:400px;height:200px;"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <input id="Submit1" type="submit" value="Analyze" />
+            </div>
+        </div>
+    </div>  
+</form>
